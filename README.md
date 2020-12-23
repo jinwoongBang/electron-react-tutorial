@@ -3,7 +3,7 @@
 ### electron.js (Entry Point)
 >./public/electron.js 파일 참조
 ### package.json
->"main": "public/electron.js",
+>"main": "public/electron.js", // Entry Point 에 대한 경로 설정
 "homepage": "./", // 이 설정 없으면 빌드 시 경로를 못찾아서 하얀 화면만 출력됨.
 <br>
 "scripts": {

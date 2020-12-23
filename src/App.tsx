@@ -1,9 +1,73 @@
 import React from 'react';
-import logo from 'logo.svg';
-import 'App.css';
+import { Provider } from 'react-redux';
+import store from 'store/store';
+import { Container, CssBaseline } from '@material-ui/core';
+import { ThemeProvider, createMuiTheme, makeStyles, Theme } from '@material-ui/core/styles';
+import Counter from 'components/counter';
+
+const theme = createMuiTheme({
+  typography: {
+    // fontFamily: "Noto Sans KR",
+    fontSize: 10,
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        // "@font-face": [
+        //   {
+        //     fontFamily: "Noto Sans KR",
+        //     fontStyle: "normal",
+        //     fontDisplay: "swap",
+        //     fontWeight: 400,
+        //     src: `
+        //     local(''),
+        //     local('Noto Sans KR'),
+        //     url(${NotoSansWoff2}) format('woff2'),
+        //     url(${NotoSansWoff}) format('woff')
+        //   `,
+        //   },
+        // ],
+        html: {
+          WebkitFontSmoothing: 'auto',
+          letterSpacing: -1,
+        },
+        body: {
+          backgroundColor: 'inherit',
+          color: '#ffffff',
+          boxSizing: 'border-box',
+        },
+      },
+    },
+  },
+  // breakpoints: {
+  //   values: {
+  //     xs: 0,
+  //     sm: 600,
+  //     md: 960,
+  //     lg: 1200,
+  //     xl: 1920,
+  //   },
+  // },
+});
+
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    margin: '100px 0 0 0',
+  },
+}));
 
 function App() {
-  return <div className="App">일렉트론 시작하기</div>;
+  const classes = useStyles();
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container className={classes.root}>
+          <Counter />
+        </Container>
+      </ThemeProvider>
+    </Provider>
+  );
 }
 
 export default App;
