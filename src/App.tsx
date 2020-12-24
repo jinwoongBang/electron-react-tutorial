@@ -4,6 +4,7 @@ import store from 'store/store';
 import { Container, CssBaseline } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme, makeStyles, Theme } from '@material-ui/core/styles';
 import Counter from 'components/counter';
+import { Calculator } from 'components/calculator';
 
 const theme = createMuiTheme({
   typography: {
@@ -52,7 +53,8 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    margin: '100px 0 0 0',
+    // margin: '100px 0 0 0',
+    // border: '1px solid tomato',
   },
 }));
 
@@ -63,7 +65,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container className={classes.root}>
-          <Counter />
+          <Calculator />
         </Container>
       </ThemeProvider>
     </Provider>

@@ -13,6 +13,13 @@ function createWindow() {
     //fullscreen: true,
     kiosk: !isDev,
     resizable: true,
+    // width: 600,
+    // height: 900,
+    minWidth: 250,
+    minHeight: 330,
+    maxWidth: 350,
+    maxHeight: 500,
+    backgroundColor: '#ffffff',
     webPreferences: {
       // 2.
       // 웹 애플리케이션을 데스크탑으로 모양만 바꾸려면 안 해도 되지만,
